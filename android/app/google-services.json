@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "464852932298",
+    "project_id": "fir-demo-9c1f9",
+    "storage_bucket": "fir-demo-9c1f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464852932298:android:225b362ebfa0e2ecfbc633",
+        "android_client_info": {
+          "package_name": "siddh.teach.fb_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464852932298-l8fv9vphhvbqf3u0foi044i4l5mm3bcl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "siddh.teach.fb_demo",
+            "certificate_hash": "ab63d3904ab0d6e841b9e3fd330c4abf92f35964"
+          }
+        },
+        {
+          "client_id": "464852932298-gu6v7paq65mt80jsn9qrge4rv72vuqrl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCebW3ptmKC9-hjk1iU86N_MEVvq9bdd-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464852932298-gu6v7paq65mt80jsn9qrge4rv72vuqrl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
