@@ -61,8 +61,7 @@ class _ImageUploadState extends State<ImageUpload> {
       image = File(capturedImage.path);
 
       setState(() {
-        //
-        // now
+        
       });
     }
   }
