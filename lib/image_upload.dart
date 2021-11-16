@@ -62,6 +62,7 @@ class _ImageUploadState extends State<ImageUpload> {
 
       setState(() {
         //
+        // now
       });
     }
   }
