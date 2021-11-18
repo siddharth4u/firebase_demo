@@ -13,29 +13,24 @@ class _ImageUploadState extends State<ImageUpload> {
   File? image;
   UploadTask? uploadTask;
 
-  @override
-  void initState() {
-    super.initState();
-  }
-
   //
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //
       appBar: AppBar(
         title: Text('Image Upload'),
 
         //
         actions: [
-          //
           IconButton(
             icon: Icon(Icons.camera),
             onPressed: () {
-              //
               getImage();
             },
           ),
 
+          // image upload button
           image == null
               ? Container()
               : IconButton(
@@ -54,20 +49,21 @@ class _ImageUploadState extends State<ImageUpload> {
             )
           : ListView(
               children: [
-                //
-                Image.file(
-                  image!,
-                ),
+                // show image here
+                Image.file(image!),
 
                 SizedBox(height: 16),
 
-                //
-                image == null ? Text('%') : showPercentage(),
+                // show percentage of image uploaded here
+                uploadTask == null
+                    ? Container()
+                    : ShowPercentage(uploadTask: uploadTask!),
               ],
             ),
     );
   }
 
+  //
   Future<void> getImage() async {
     var capturedImage =
         await ImagePicker().pickImage(source: ImageSource.gallery);
@@ -80,45 +76,58 @@ class _ImageUploadState extends State<ImageUpload> {
   }
 
   Future<void> uploadImage() async {
-    // get File extension
-    String fileExtension = image!.path.split('.').last;
+    // get image extension
+    String imageExtension = image!.path.split('.').last;
 
     // create unique file name
-    String uniqueFileName =
-        DateTime.now().microsecondsSinceEpoch.toString() + '.' + fileExtension;
+    String imageName =
+        DateTime.now().microsecondsSinceEpoch.toString() + '.' + imageExtension;
 
+    // get firebase storage
     FirebaseStorage firebaseStorage = FirebaseStorage.instance;
-    Reference reference = firebaseStorage.ref('images/$uniqueFileName');
-    uploadTask = reference.putFile(image!);
+
+    // create image reference in advanced
+    Reference firebaseReferece = firebaseStorage.ref('images/$imageName');
+
+    // upload image to firebase storage
+    uploadTask = firebaseReferece.putFile(image!);
 
     setState(() {
       //
     });
-    TaskSnapshot taskSnapshot = await uploadTask!.whenComplete(() => null);
-    String downloadURL = await taskSnapshot.ref.getDownloadURL();
-    print(downloadURL);
   }
+}
 
-  Widget showPercentage() {
-    return uploadTask == null
-        ? Container()
-        : StreamBuilder(
-            stream: uploadTask!.snapshotEvents,
-            builder: (BuildContext buildContext, AsyncSnapshot snapshot) {
-              if (!snapshot.hasData) {
-                return Container();
-              }
+class ShowPercentage extends StatelessWidget {
+  //
+  final UploadTask uploadTask;
 
-              TaskSnapshot taskStatus = snapshot.data;
+  ShowPercentage({required this.uploadTask});
 
-              int totalByte = taskStatus.totalBytes;
-              int byteTrasfered = taskStatus.bytesTransferred;
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: uploadTask.snapshotEvents,
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if (!snapshot.hasData) {
+          return Container();
+        }
 
-              String percentage =
-                  ((byteTrasfered / totalByte) * 100).toStringAsFixed(0);
+        //
+        TaskSnapshot taskStatus = snapshot.data;
+        int totalBytes = taskStatus.totalBytes;
+        int byteTrasfered = taskStatus.bytesTransferred;
 
-              return Center(child: Text('$percentage %'));
-            },
-          );
+        String percentage =
+            ((byteTrasfered / totalBytes) * 100).toStringAsFixed(0);
+
+        return Center(
+          child: Text(
+            '$percentage %',
+            style: TextStyle(fontSize: 20),
+          ),
+        );
+      },
+    );
   }
 }
