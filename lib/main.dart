@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'image_upload.dart';
 import 'read_data.dart';
 import 'read_stream.dart';
+import 'uplad_file.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ImageUpload(),
+      home: UploadFile(),
     );
   }
 }
