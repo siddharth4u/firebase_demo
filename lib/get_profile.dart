@@ -84,8 +84,9 @@ class _GetProfileState extends State<GetProfile> {
           // save button
           ElevatedButton(
             child: Text('Save Data'),
-            onPressed: () {
-              saveUserData();
+            onPressed: () async {
+              await saveUserData();
+              Navigator.pop(context);
             },
           ),
         ],
@@ -121,7 +122,9 @@ class _GetProfileState extends State<GetProfile> {
       Reference firebaseReference =
           firebaseStorage.ref('profilePicture/$imageName');
 
-      firebaseReference.putFile(image!);
+      UploadTask uploadTask = firebaseReference.putFile(image!);
+
+      await uploadTask.whenComplete(() => null);
     }
 
     // store data to firestore collection

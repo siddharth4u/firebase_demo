@@ -6,6 +6,8 @@ import 'get_profile.dart';
 import 'image_upload.dart';
 import 'read_data.dart';
 import 'read_stream.dart';
+import 'show_profile.dart';
+import 'show_profile_with_stream.dart';
 import 'uplad_file.dart';
 
 void main() async {
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GetProfile(),
+      home: ShowProfileWithStream(),
     );
   }
 }
