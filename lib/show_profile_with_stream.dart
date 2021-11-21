@@ -1,3 +1,4 @@
+import 'package:fb_demo/edit_profile.dart';
 import 'package:fb_demo/get_profile.dart';
 import 'package:fb_demo/user.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,7 @@ class ShowProfileWithStream extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               //
               User user = User.fromDocumentSnapshot(snapshot.data.docs[index]);
-
+              user.imageURL = '';
               //
               return ListTile(
                 //
@@ -46,28 +47,44 @@ class ShowProfileWithStream extends StatelessWidget {
                         radius: 26,
                         child: Icon(Icons.person),
                       )
-                    : FutureBuilder(
-                        future: getImageURL(user.imagePath),
-                        builder:
-                            (BuildContext context, AsyncSnapshot snapshot) {
-                          //
-                          if (!snapshot.hasData) {
-                            return Container();
-                          }
+                    : Container(
+                      width: 50,
+                      child: FutureBuilder(
+                          future: getImageURL(user.imagePath),
+                          builder:
+                              (BuildContext context, AsyncSnapshot snapshot) {
+                            //
+                            if (!snapshot.hasData) {
+                              return Container();
+                            }
 
-                          //
-                          return CircleAvatar(
-                            radius: 26,
-                            backgroundImage: NetworkImage(snapshot.data),
-                          );
-                        },
-                      ),
+                            user.imageURL = snapshot.data;
+
+                            //
+                            return CircleAvatar(
+                              radius: 26,
+                              backgroundImage: NetworkImage(snapshot.data),
+                            );
+                          },
+                        ),
+                    ),
 
                 //
                 title: Text('${user.name}'),
 
                 //
                 subtitle: Text('${user.email}'),
+
+                //
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          EditProfile(user: user),
+                    ),
+                  );
+                },
               );
             },
           );

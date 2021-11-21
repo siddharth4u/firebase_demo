@@ -19,6 +19,15 @@ class User {
   }
 
   //
+  User.fromAnotherUser(User user) {
+    this.name = user.name;
+    this.email = user.email;
+    this.id = user.id;
+    this.imagePath = user.imagePath;
+    this.imageURL = user.imageURL;
+  }
+
+  //
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = Map<String, dynamic>();
 
