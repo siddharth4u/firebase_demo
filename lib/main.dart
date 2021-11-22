@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'create_user.dart';
 import 'get_profile.dart';
 import 'image_upload.dart';
 import 'read_data.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ShowProfileWithStream(),
+      home: CreateUser(),
     );
   }
 }
