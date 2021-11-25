@@ -7,6 +7,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'create_user.dart';
 import 'emailAuth/dashbaord.dart';
+import 'emailAuth/sign_in_with_email_validation.dart';
 import 'get_profile.dart';
 import 'image_upload.dart';
 import 'read_data.dart';
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: isUserLogedIn() ? Dashbaord() : SignIn(),
+    //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
+    home: SignInWithEmailValidation(),
     );
   }
 
