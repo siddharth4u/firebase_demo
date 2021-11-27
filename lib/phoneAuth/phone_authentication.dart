@@ -136,6 +136,8 @@ class _PhoneAuthenticationState extends State<PhoneAuthentication> {
           if (user != null) {
             // done
             print('User Created');
+
+            // go to dahsboard
           } else {
             setState(() {
               errorMessage = 'Unable to Create User';
