@@ -9,7 +9,9 @@ import 'create_user.dart';
 import 'emailAuth/dashbaord.dart';
 import 'emailAuth/sign_in_with_email_validation.dart';
 import 'get_profile.dart';
+
 import 'image_upload.dart';
+import 'my_sign_in.dart';
 import 'phoneAuth/phone_authentication.dart';
 import 'read_data.dart';
 import 'read_stream.dart';
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
-    home: PhoneAuthentication(),
+    home: MySignIn(),
     );
   }
 
