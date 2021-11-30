@@ -8,6 +8,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'create_user.dart';
 import 'emailAuth/dashbaord.dart';
 import 'emailAuth/sign_in_with_email_validation.dart';
+import 'filters/add_products.dart';
+import 'filters/fliter_demo.dart';
 import 'get_profile.dart';
 
 import 'image_upload.dart';
@@ -15,6 +17,7 @@ import 'my_sign_in.dart';
 import 'phoneAuth/phone_authentication.dart';
 import 'read_data.dart';
 import 'read_stream.dart';
+import 'refresh_demo.dart';
 import 'show_profile.dart';
 import 'show_profile_with_stream.dart';
 import 'uplad_file.dart';
@@ -35,7 +38,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
-    home: MySignIn(),
+    home: FilterDemo(),
     );
   }
 
