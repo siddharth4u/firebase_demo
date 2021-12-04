@@ -9,8 +9,11 @@ import 'create_user.dart';
 import 'emailAuth/dashbaord.dart';
 import 'emailAuth/sign_in_with_email_validation.dart';
 import 'filters/add_products.dart';
+import 'filters/add_users.dart';
+import 'filters/client_side_search.dart';
 import 'filters/fliter_demo.dart';
 import 'filters/search_demo.dart';
+import 'filters/server_side_search.dart';
 import 'get_profile.dart';
 
 import 'image_upload.dart';
@@ -40,7 +43,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
-    home: SearchDemo(),
+    home: ServerSideSearch(),
     );
   }
 
