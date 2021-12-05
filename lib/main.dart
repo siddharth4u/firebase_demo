@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'create_user.dart';
+import 'dismiss_demo.dart';
 import 'emailAuth/dashbaord.dart';
 import 'emailAuth/sign_in_with_email_validation.dart';
 import 'filters/add_products.dart';
@@ -17,6 +18,7 @@ import 'filters/server_side_search.dart';
 import 'get_profile.dart';
 
 import 'image_upload.dart';
+import 'load_more_dummy.dart';
 import 'my_sign_in.dart';
 import 'otp_ui.dart';
 import 'phoneAuth/phone_authentication.dart';
@@ -43,7 +45,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
-    home: ServerSideSearch(),
+    home: LoadMoreDummy(),
     );
   }
 
