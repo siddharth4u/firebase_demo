@@ -61,18 +61,18 @@ class AddUsers extends StatelessWidget {
   void addUsers() async {
     String name = nameController.text;
     String email = emailController.text;
-    List<String> nameSearch = [];
+    // List<String> nameSearch = [];
 
-    //
-    for (int i = 0; i < name.length; i++) {
-      nameSearch.add(name.substring(0, i + 1));
-    }
+    // //
+    // for (int i = 0; i < name.length; i++) {
+    //   nameSearch.add(name.substring(0, i + 1));
+    // }
 
     //
     await users.add({
       'name': name,
       'email': email,
-      'name_search': nameSearch,
+      //'name_search': nameSearch,
     });
 
     //

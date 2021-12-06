@@ -19,12 +19,14 @@ import 'get_profile.dart';
 
 import 'image_upload.dart';
 import 'load_more_dummy.dart';
+import 'load_more_firebase.dart';
 import 'my_sign_in.dart';
 import 'otp_ui.dart';
 import 'phoneAuth/phone_authentication.dart';
 import 'read_data.dart';
 import 'read_stream.dart';
 import 'refresh_demo.dart';
+import 'section_demo.dart';
 import 'show_profile.dart';
 import 'show_profile_with_stream.dart';
 import 'uplad_file.dart';
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
-    home: LoadMoreDummy(),
+    home: LoadMoreFirebase(),
     );
   }
 

@@ -34,6 +34,7 @@ dependencies:
   file_picker:
   firebase_auth:
   google_sign_in:
+  grouped_list:
 
 dev_dependencies:
   flutter_test:
