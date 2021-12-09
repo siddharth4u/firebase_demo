@@ -27,6 +27,7 @@ import 'read_data.dart';
 import 'read_stream.dart';
 import 'refresh_demo.dart';
 import 'section_demo.dart';
+import 'sections/date_wise_sections.dart';
 import 'sections/month_wise_sections.dart';
 import 'show_profile.dart';
 import 'show_profile_with_stream.dart';
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
-    home: MonthWiseSections(),
+    home: DateWiseSection(),
     );
   }
 
