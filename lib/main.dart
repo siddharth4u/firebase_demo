@@ -32,6 +32,9 @@ import 'sections/month_demo.dart';
 import 'sections/month_wise_sections.dart';
 import 'show_profile.dart';
 import 'show_profile_with_stream.dart';
+import 'sub_collections/customer/restaurant_list.dart';
+import 'sub_collections/dish_list.dart';
+import 'sub_collections/registration.dart';
 import 'uplad_file.dart';
 
 void main() async {
@@ -50,7 +53,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
-    home: MonthDemo(),
+    home: RestaurantsList(),
     );
   }
 
