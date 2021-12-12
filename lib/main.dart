@@ -1,5 +1,6 @@
 import 'package:fb_demo/emailAuth/sign_in.dart';
 import 'package:fb_demo/login.dart';
+import 'package:fb_demo/relation/dish_list.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -26,6 +27,7 @@ import 'phoneAuth/phone_authentication.dart';
 import 'read_data.dart';
 import 'read_stream.dart';
 import 'refresh_demo.dart';
+import 'relation/customer/restaurants_list.dart';
 import 'section_demo.dart';
 import 'sections/date_wise_sections.dart';
 import 'sections/month_demo.dart';
@@ -33,7 +35,6 @@ import 'sections/month_wise_sections.dart';
 import 'show_profile.dart';
 import 'show_profile_with_stream.dart';
 import 'sub_collections/customer/restaurant_list.dart';
-import 'sub_collections/dish_list.dart';
 import 'sub_collections/registration.dart';
 import 'uplad_file.dart';
 
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
-    home: RestaurantsList(),
+    home: RestaurantList(),
     );
   }
 
