@@ -1,8 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="siddh.teach.fb_demo">
+
    <application
         android:label="fb_demo"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyAeRQS9gQf6eXgePxxLaysTywAJgEKbB1U"/>
+
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
