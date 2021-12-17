@@ -22,6 +22,7 @@ import 'image_upload.dart';
 import 'load_more_dummy.dart';
 import 'load_more_firebase.dart';
 import 'maps/controller_demo.dart';
+import 'maps/dynamic_marker.dart';
 import 'maps/map_demo.dart';
 import 'maps/marker_demo.dart';
 import 'my_sign_in.dart';
@@ -57,7 +58,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
-    home: MarkerDemo(),
+    home: DynamicMarker(),
     );
   }
 
