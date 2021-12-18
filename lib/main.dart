@@ -25,6 +25,8 @@ import 'maps/controller_demo.dart';
 import 'maps/dynamic_marker.dart';
 import 'maps/map_demo.dart';
 import 'maps/marker_demo.dart';
+import 'maps/polyline_demo.dart';
+import 'maps/radius_demo.dart';
 import 'my_sign_in.dart';
 import 'otp_ui.dart';
 import 'phoneAuth/phone_authentication.dart';
@@ -58,7 +60,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
-    home: DynamicMarker(),
+    home: PolylineDemo(),
     );
   }
 
