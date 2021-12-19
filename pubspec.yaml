@@ -36,6 +36,7 @@ dependencies:
   google_sign_in:
   grouped_list:
   google_maps_flutter:
+  geolocator:
 
 dev_dependencies:
   flutter_test:
