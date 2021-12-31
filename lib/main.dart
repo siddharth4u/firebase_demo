@@ -24,6 +24,7 @@ import 'load_more_firebase.dart';
 import 'location/current_location.dart';
 import 'location/live_location.dart';
 import 'maps/controller_demo.dart';
+import 'maps/direction_demo.dart';
 import 'maps/dynamic_marker.dart';
 import 'maps/map_demo.dart';
 import 'maps/marker_demo.dart';
@@ -62,7 +63,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     //  home: isUserLogedIn() ? Dashbaord() : SignIn(),
-    home: LiveLocation(),
+    home: DirectionDemo(),
     );
   }
 

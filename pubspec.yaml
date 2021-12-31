@@ -37,6 +37,7 @@ dependencies:
   grouped_list:
   google_maps_flutter:
   geolocator:
+  flutter_polyline_points:
 
 dev_dependencies:
   flutter_test:
