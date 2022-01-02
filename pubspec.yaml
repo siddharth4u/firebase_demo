@@ -38,6 +38,8 @@ dependencies:
   google_maps_flutter:
   geolocator:
   flutter_polyline_points:
+  geocoding:
+  get:
 
 dev_dependencies:
   flutter_test:
